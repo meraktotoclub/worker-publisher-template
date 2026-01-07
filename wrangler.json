@@ -1,21 +1,18 @@
+
+
+
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "worker-publisher-template",
-	"main": "./src/index.ts",
-	"compatibility_date": "2025-10-08",
-	"upload_source_maps": true,
-	"dispatch_namespaces": [
-		{
-			"binding": "DISPATCHER",
-			"namespace": "my-dispatch-namespace",
-			"remote": true
-		}
-	],
-	"observability": {
-		"enabled": true
-	},
-	"vars": {
-		"CLOUDFLARE_ACCOUNT_ID": "4ca7ad1f554a467fb0cca78c105dd5fd",
-		"READONLY": "true"
-	}
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "trace-logs",
+  "main": "./worker.js",
+  "compatibility_date": "2025-10-08",
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "TRACE_LOGS",
+      "id": "4ca7ad1f554a467fb0cca78c105dd5fd"
+    }
+  ]
 }
